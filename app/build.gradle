@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.toocms.template"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 20170622
+        versionName "v2.0.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            manifestPlaceholders = [
+                    "baidu_apikey": properties.getProperty("baidu.apikey")
+            ]
+        }
+        debug {
+            minifyEnabled false
+            manifestPlaceholders = [
+                    "baidu_apikey": properties.getProperty("baidu.apikey")
+            ]
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //  主框架
+    compile(name: 'TooCMSAndroidFrame', ext: 'aar')
+    //  支付
+    compile(name: 'TooCMSAndroidPay', ext: 'aar')
+    //  三方分享/登录
+    //    compile(name: 'TooCMSAndroidShare', ext: 'aar')
+    // 兼容
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:design:25.3.0'
+    // Glide 图片加载
+    compile 'com.github.bumptech.glide:glide:+'
+    //  网络请求
+    compile 'com.lzy.net:okgo:3.0.1'
+    //    compile 'com.lzy.net:okserver:+'
+    //  屏幕适配
+    compile 'com.zhy:autolayout:+'
+    // Gson解析
+    compile 'com.google.code.gson:gson:+'
+    //  View注入
+    compile 'com.jakewharton:butterknife:+'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:+'
+}

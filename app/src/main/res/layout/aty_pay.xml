@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.zero.android.common.view.autolayout.AutoRadioGroup
+            android:id="@+id/pay_rdogrp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25px"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="30px"
+            android:paddingRight="30px">
+
+            <RadioButton
+                android:id="@+id/pay_wxpay"
+                style="@style/style_rdobtn"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:checked="true"
+                android:drawableLeft="@drawable/flag_wxpay"
+                android:drawablePadding="20px"
+                android:drawableRight="@drawable/flag_radio"
+                android:text="微信支付"
+                android:textColor="#4C4C4C"
+                android:textSize="28px" />
+
+            <View style="@style/divider" />
+
+            <RadioButton
+                android:id="@+id/pay_alipay"
+                style="@style/style_rdobtn"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:drawableLeft="@drawable/flag_alipay"
+                android:drawablePadding="20px"
+                android:drawableRight="@drawable/flag_radio"
+                android:text="支付宝支付"
+                android:textColor="#4C4C4C"
+                android:textSize="28px" />
+
+            <View style="@style/divider" />
+
+            <RadioButton
+                android:id="@+id/pay_balpay"
+                style="@style/style_rdobtn"
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:drawableLeft="@drawable/flag_balpay"
+                android:drawablePadding="20px"
+                android:drawableRight="@drawable/flag_radio"
+                android:text="余额支付"
+                android:textColor="#4C4C4C"
+                android:textSize="28px" />
+        </cn.zero.android.common.view.autolayout.AutoRadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="250px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/style_default_sub_text"
+                android:text="可用金额 "
+                android:textSize="22px" />
+
+            <TextView
+                android:id="@+id/pay_balance"
+                style="@style/style_default_sub_text"
+                android:text="15.99"
+                android:textColor="#FF2424"
+                android:textSize="22px" />
+
+            <TextView
+                style="@style/style_default_sub_text"
+                android:text=" 元"
+                android:textSize="22px" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <View style="@style/weight" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/style_default_text"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="30px"
+            android:text="支付：" />
+
+        <TextView
+            android:id="@+id/pay_total"
+            style="@style/style_default_text"
+            android:layout_weight="1"
+            android:text="￥75.00"
+            android:textColor="@color/clr_main"
+            android:textSize="34px" />
+
+        <cn.zero.android.common.view.FButton
+            android:id="@+id/pay"
+            style="@style/style_default_fbtn"
+            android:layout_width="260px"
+            android:layout_height="match_parent"
+            android:text="付款"
+            app:cornerRadius="0px" />
+    </LinearLayout>
+</LinearLayout>

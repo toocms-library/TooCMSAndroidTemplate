@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/cart_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/action_bg"
+        android:paddingLeft="30px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="购物车"
+            android:textColor="@color/action_title_color"
+            android:textSize="@dimen/action_title_size" />
+
+        <TextView
+            android:id="@+id/cart_state"
+            android:layout_width="@dimen/action_height_size"
+            android:layout_height="@dimen/action_height_size"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/normal_white_pressed_gray"
+            android:gravity="center"
+            android:text="编辑"
+            android:textColor="@color/action_menu_color"
+            android:textSize="@dimen/action_menu_size" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cart_notice"
+                style="@style/style_default_text"
+                android:layout_height="80px"
+                android:background="#FFE7B3"
+                android:paddingLeft="40px"
+                android:paddingRight="40px"
+                android:text="全场满50包邮"
+                android:textColor="#666666"
+                android:textSize="24px" />
+
+            <cn.zero.android.common.view.swipetoloadlayout.view.SwipeToLoadRecyclerView
+                android:id="@+id/cart_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:swipe_mode="pullDownFromTop"></cn.zero.android.common.view.swipetoloadlayout.view.SwipeToLoadRecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110px"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cart_all"
+                    style="@style/style_default_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@drawable/flag_radio_normal"
+                    android:paddingLeft="30px"
+                    android:paddingRight="30px"
+                    android:text="全选"
+                    android:textSize="30px" />
+
+                <LinearLayout
+                    android:id="@+id/linlay_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/style_default_text"
+                            android:layout_marginLeft="10px"
+                            android:text="合计：" />
+
+                        <TextView
+                            android:id="@+id/cart_total"
+                            style="@style/style_default_text"
+                            android:text="￥75.00"
+                            android:textColor="@color/clr_main" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/cart_freight"
+                        style="@style/style_default_text"
+                        android:layout_marginLeft="10px"
+                        android:layout_marginTop="10px"
+                        android:text="还差15元可享包邮"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <cn.zero.android.common.view.FButton
+                    android:id="@+id/cart_settle"
+                    style="@style/style_default_fbtn"
+                    android:layout_width="260px"
+                    android:layout_height="match_parent"
+                    android:text="去结算"
+                    app:cornerRadius="0px" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--图标需换成空视图图标-->
+        <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+            android:id="@+id/cart_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/clr_bg"
+            android:drawablePadding="50px"
+            android:drawableTop="@drawable/empty_cart"
+            android:gravity="center_horizontal"
+            android:text="购物车还是空的"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

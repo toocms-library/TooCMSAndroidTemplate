@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/normal_white_pressed_gray"
+        android:padding="20px">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <cn.zero.android.common.view.CouponFrameView
+                android:id="@+id/listitem_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF8237"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="25px"
+                android:paddingLeft="50px"
+                android:paddingRight="50px"
+                android:paddingTop="25px">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="￥"
+                            android:textColor="@color/white"
+                            android:textSize="28px" />
+
+                        <TextView
+                            android:id="@+id/listitem_coupon_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10.0"
+                            android:textColor="@color/white"
+                            android:textSize="56px" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/listitem_coupon_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25px"
+                        android:text="满30元可用"
+                        android:textColor="@color/white"
+                        android:textSize="24px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="120px"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/listitem_coupon_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="水果类专用"
+                        android:textColor="@color/white"
+                        android:textSize="34px" />
+
+                    <TextView
+                        android:id="@+id/listitem_coupon_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25px"
+                        android:text="在线支付专享"
+                        android:textColor="@color/white"
+                        android:textSize="24px" />
+
+                    <TextView
+                        android:id="@+id/listitem_coupon_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25px"
+                        android:text="有效期至：2015-09-25"
+                        android:textColor="@color/white"
+                        android:textSize="24px" />
+                </LinearLayout>
+            </cn.zero.android.common.view.CouponFrameView>
+
+            <ImageView
+                android:id="@+id/listitem_coupon_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="25px"
+                android:src="@drawable/ic_coupon_expired"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/listitem_coupon_occupy"
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:visibility="gone" />
+</LinearLayout>

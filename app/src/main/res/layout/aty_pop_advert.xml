@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pop_advert_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <cn.zero.android.common.view.shapeimageview.RoundedImageView
+            android:id="@+id/pop_advert_image"
+            android:layout_width="550px"
+            android:layout_height="800px"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_guide1"
+            app:siBorderAlpha="0"
+            app:siRadius="5dp" />
+
+        <ImageButton
+            android:id="@+id/pop_advert_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_pop_close" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="140px" />
+</LinearLayout>

@@ -1,0 +1,98 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--如果通知栏的背景色不是白色的话删掉这个主题，Manifest中theme用AppTheme.CustomActionBar，如果是白色就直接用这个主题-->
+    <style name="AppTheme.CustomActionBar.Template" parent="@style/AppTheme.CustomActionBar">
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="AppTheme.CustomActionBar.Template.Loading" parent="AppTheme.CustomActionBar.Template">
+        <item name="android:windowBackground">@drawable/layer_loading</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--默认文字颜色、字号、与图片的间距-->
+    <style name="style_default_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/clr_default_text</item>
+        <item name="android:textSize">@dimen/dim_default_text</item>
+        <item name="android:drawablePadding">@dimen/dim_default_drawablepadding</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="style_default_sub_text" parent="style_default_text">
+        <item name="android:textColor">@color/clr_default_sub_text</item>
+        <item name="android:textSize">@dimen/dim_default_sub_text</item>
+    </style>
+
+    <style name="divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#CCCCCC</item>
+    </style>
+
+    <!-- 主页TAB底部按钮样式 -->
+    <style name="main_tab_item">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">22px</item>
+        <item name="android:drawablePadding">15px</item>
+        <item name="android:paddingTop">15px</item>
+        <item name="android:paddingBottom">15px</item>
+    </style>
+
+    <!--主页TAB底部角标-->
+    <style name="main_tab_badge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_marginTop">8px</item>
+        <item name="android:layout_marginRight">50px</item>
+        <item name="android:background">@drawable/shape_badgeview</item>
+        <item name="android:paddingLeft">10px</item>
+        <item name="android:paddingRight">10px</item>
+        <item name="android:paddingTop">5px</item>
+        <item name="android:paddingBottom">5px</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18px</item>
+    </style>
+
+    <!--我的页订单分类按钮样式-->
+    <style name="mine_order_item" parent="style_default_text">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/normal_white_pressed_gray</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!--FButton按钮默认样式-->
+    <style name="style_default_fbtn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80px</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">32px</item>
+        <item name="buttonColor">@color/clr_main</item>
+        <item name="cornerRadius">12px</item>
+        <item name="shadowEnabled">false</item>
+    </style>
+
+    <!--默认的空视图样式-->
+    <style name="style_default_empty">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:drawablePadding">50px</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!--设置页item样式-->
+    <style name="style_settings_item" parent="style_default_text">
+        <item name="android:layout_height">90px</item>
+        <item name="android:paddingLeft">30px</item>
+        <item name="android:paddingRight">30px</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:background">@drawable/normal_white_pressed_gray</item>
+    </style>
+</resources>

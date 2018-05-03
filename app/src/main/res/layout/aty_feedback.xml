@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/feedback_content"
+        style="@style/style_default_text"
+        android:layout_margin="30px"
+        android:background="@drawable/bg_edittext_white"
+        android:gravity="left|top"
+        android:hint="请输入您的反馈意见，感谢您帮助我们改进产品和服务！"
+        android:minLines="6"
+        android:padding="20px"
+        android:textSize="30px" />
+
+    <EditText
+        android:id="@+id/feedback_phone"
+        style="@style/style_default_text"
+        android:layout_marginBottom="65px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="@drawable/bg_edittext_white"
+        android:hint="请留下您的邮箱、QQ号或手机号"
+        android:padding="20px"
+        android:singleLine="true"
+        android:textSize="30px" />
+
+    <cn.zero.android.common.view.FButton
+        android:id="@+id/feedback_submit"
+        style="@style/style_default_fbtn"
+        android:layout_margin="25px"
+        android:text="提交" />
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mine_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/action_bg"
+        android:paddingLeft="30px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的"
+            android:textColor="@color/action_title_color"
+            android:textSize="@dimen/action_title_size" />
+
+        <TextView
+            android:layout_width="@dimen/action_height_size"
+            android:layout_height="@dimen/action_height_size"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/normal_white_pressed_gray"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/action_menu_color"
+            android:textSize="@dimen/action_menu_size"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mine_user"
+        android:layout_width="match_parent"
+        android:layout_height="195px"
+        android:background="@drawable/bg_mine"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="40px"
+        android:paddingRight="40px">
+
+        <cn.zero.android.common.view.shapeimageview.CircularImageView
+            android:id="@+id/mine_head"
+            android:layout_width="105px"
+            android:layout_height="105px"
+            android:src="@drawable/ic_default_head"
+            app:siBorderColor="@color/white"
+            app:siBorderWidth="3dp" />
+
+        <TextView
+            android:id="@+id/mine_name"
+            style="@style/style_default_text"
+            android:layout_marginLeft="30px"
+            android:layout_weight="1"
+            android:text="登录 | 注册"
+            android:textSize="34px" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flag_arrow_right"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        style="@style/divider"
+        android:layout_marginTop="20px" />
+
+    <TextView
+        android:id="@+id/mine_order"
+        style="@style/style_default_text"
+        android:layout_height="95px"
+        android:background="@drawable/normal_white_pressed_gray"
+        android:drawableLeft="@drawable/flag_mine_order"
+        android:drawableRight="@drawable/flag_arrow_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:text="我的订单" />
+
+    <View style="@style/divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:orientation="horizontal">
+
+        <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+            android:id="@+id/mine_order_pay"
+            style="@style/mine_order_item"
+            android:drawableTop="@drawable/flag_mine_pay"
+            android:text="待支付" />
+
+        <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+            android:id="@+id/mine_order_delivery"
+            style="@style/mine_order_item"
+            android:drawableTop="@drawable/flag_mine_delivery"
+            android:text="待发货" />
+
+        <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+            android:id="@+id/mine_order_take"
+            style="@style/mine_order_item"
+            android:drawableTop="@drawable/flag_mine_take"
+            android:text="待收货" />
+
+        <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+            android:id="@+id/mine_order_evaluate"
+            style="@style/mine_order_item"
+            android:drawableTop="@drawable/flag_mine_evaluate"
+            android:text="待评价" />
+
+        <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+            android:id="@+id/mine_order_return"
+            style="@style/mine_order_item"
+            android:drawableTop="@drawable/flag_mine_return"
+            android:text="退换" />
+    </LinearLayout>
+
+    <View style="@style/divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25px"
+        android:background="@color/divider"
+        android:orientation="vertical"
+        android:padding="1px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="185px"
+            android:orientation="horizontal">
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_browse"
+                style="@style/mine_order_item"
+                android:drawableTop="@drawable/flag_mine_browse"
+                android:text="浏览记录" />
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_wallet"
+                style="@style/mine_order_item"
+                android:layout_marginLeft="1px"
+                android:drawableTop="@drawable/flag_mine_wallet"
+                android:text="我的钱包" />
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_address"
+                style="@style/mine_order_item"
+                android:layout_marginLeft="1px"
+                android:drawableTop="@drawable/flag_mine_address"
+                android:text="收货地址" />
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_coupon"
+                style="@style/mine_order_item"
+                android:layout_marginLeft="1px"
+                android:drawableTop="@drawable/flag_mine_coupon"
+                android:text="优惠券" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="185px"
+            android:layout_marginTop="1px"
+            android:orientation="horizontal">
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_collect"
+                style="@style/mine_order_item"
+                android:drawableTop="@drawable/flag_mine_collect"
+                android:text="我的收藏" />
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_help"
+                style="@style/mine_order_item"
+                android:layout_marginLeft="1px"
+                android:drawableTop="@drawable/flag_mine_help"
+                android:text="使用帮助" />
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_feedback"
+                style="@style/mine_order_item"
+                android:layout_marginLeft="1px"
+                android:drawableTop="@drawable/flag_mine_feedback"
+                android:text="意见反馈" />
+
+            <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+                android:id="@+id/mine_settings"
+                style="@style/mine_order_item"
+                android:layout_marginLeft="1px"
+                android:drawableTop="@drawable/flag_mine_settings"
+                android:text="设置" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

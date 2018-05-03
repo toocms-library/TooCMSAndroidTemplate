@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFBEE"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/listitem_delivery_time_item"
+        style="@style/style_default_text"
+        android:drawableLeft="@drawable/flag_delivery_time_normal"
+        android:padding="30px"
+        android:text="立即送达" />
+</LinearLayout>

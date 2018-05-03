@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100px"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="30px"
+        android:paddingRight="30px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="35px"
+            android:paddingTop="35px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:text="姓名："
+                android:textColor="#656565" />
+
+            <EditText
+                android:id="@+id/address_detail_name"
+                style="@style/style_default_text"
+                android:layout_marginLeft="30px"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <View style="@style/divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="35px"
+            android:paddingTop="35px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:text="手机："
+                android:textColor="#656565" />
+
+            <EditText
+                android:id="@+id/address_detail_phone"
+                style="@style/style_default_text"
+                android:layout_marginLeft="30px"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <View style="@style/divider" />
+
+        <LinearLayout
+            android:id="@+id/address_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="35px"
+            android:paddingTop="35px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:text="所在地区："
+                android:textColor="#656565" />
+
+            <TextView
+                android:id="@+id/address_detail_area"
+                style="@style/style_default_text"
+                android:layout_marginLeft="30px"
+                android:drawableRight="@drawable/flag_arrow_right"
+                android:gravity="right" />
+        </LinearLayout>
+
+        <View style="@style/divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:paddingBottom="35px"
+            android:paddingTop="35px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:text="详细地址："
+                android:textColor="#656565" />
+
+            <EditText
+                android:id="@+id/address_detail"
+                style="@style/style_default_text"
+                android:layout_marginLeft="30px"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="2" />
+        </LinearLayout>
+
+        <View style="@style/divider" />
+
+        <CheckBox
+            android:id="@+id/address_detail_default"
+            style="@style/style_cbox"
+            android:layout_height="115px"
+            android:drawableLeft="@drawable/flag_radio"
+            android:text="设为默认地址"
+            android:textColor="#323232"
+            android:textSize="28px" />
+    </LinearLayout>
+
+    <cn.zero.android.common.view.FButton
+        android:id="@+id/address_detail_save"
+        style="@style/style_default_fbtn"
+        android:layout_margin="25px"
+        android:text="保存" />
+</LinearLayout>

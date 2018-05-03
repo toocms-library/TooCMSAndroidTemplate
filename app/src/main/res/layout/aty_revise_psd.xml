@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="90px"
+            android:layout_marginTop="30px"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="30px"
+            android:paddingRight="30px">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="35px"
+                android:paddingTop="35px">
+
+                <TextView
+                    style="@style/style_default_text"
+                    android:layout_width="wrap_content"
+                    android:text="原密码" />
+
+                <EditText
+                    android:id="@+id/revise_psd_old_psd"
+                    style="@style/style_default_text"
+                    android:layout_marginLeft="30px"
+                    android:password="true"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <View style="@style/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="35px"
+                android:paddingTop="35px">
+
+                <TextView
+                    style="@style/style_default_text"
+                    android:layout_width="wrap_content"
+                    android:text="新密码" />
+
+                <EditText
+                    android:id="@+id/revise_psd_newpsd"
+                    style="@style/style_default_text"
+                    android:layout_marginLeft="30px"
+                    android:password="true"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <View style="@style/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="35px"
+                android:paddingTop="35px">
+
+                <TextView
+                    style="@style/style_default_text"
+                    android:layout_width="wrap_content"
+                    android:text="确认新密码" />
+
+                <EditText
+                    android:id="@+id/revise_psd_renewpsd"
+                    style="@style/style_default_text"
+                    android:layout_marginLeft="30px"
+                    android:password="true"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <cn.zero.android.common.view.FButton
+            android:id="@+id/revise_psd_sure"
+            style="@style/style_default_fbtn"
+            android:layout_marginLeft="25px"
+            android:layout_marginRight="25px"
+            android:text="确认修改" />
+    </LinearLayout>
+</ScrollView>

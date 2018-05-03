@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/revise_name"
+        style="@style/style_default_text"
+        android:layout_margin="30px"
+        android:background="@drawable/bg_edittext_white"
+        android:hint="请输入昵称"
+        android:padding="25px"
+        android:text="Zero" />
+
+    <cn.zero.android.common.view.FButton
+        android:id="@+id/revise_name_save"
+        style="@style/style_default_fbtn"
+        android:layout_marginLeft="25px"
+        android:layout_marginRight="25px"
+        android:layout_marginTop="60px"
+        android:text="保存" />
+</LinearLayout>

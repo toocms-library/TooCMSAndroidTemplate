@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:background="@drawable/normal_white_pressed_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="30px"
+        android:paddingRight="30px"
+        android:paddingTop="30px">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/listitem_cart_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20px"
+            app:srcCompat="@drawable/flag_radio_normal" />
+
+        <ImageView
+            android:id="@+id/listitem_cart_image"
+            android:layout_width="170px"
+            android:layout_height="170px"
+            android:layout_marginLeft="10px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20px"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/listitem_cart_name"
+                style="@style/style_default_text"
+                android:gravity="top"
+                android:lines="2"
+                android:text="西红柿 真正的密云西红柿"
+                android:textSize="26px" />
+
+            <View style="@style/weight" />
+
+            <TextView
+                android:id="@+id/listitem_cart_spec"
+                style="@style/style_default_text"
+                android:text="规格：2.0kg/箱"
+                android:textColor="#656565"
+                android:textSize="24px" />
+
+            <View style="@style/weight" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/listitem_cart_price"
+                    style="@style/style_default_text"
+                    android:layout_weight="1"
+                    android:text="￥25.00"
+                    android:textColor="@color/clr_main"
+                    android:textSize="26px" />
+
+                <ImageButton
+                    android:id="@+id/listitem_cart_reduce"
+                    android:layout_width="43px"
+                    android:layout_height="41px"
+                    android:background="@drawable/shape_reduce"
+                    app:srcCompat="@drawable/ic_reduce" />
+
+                <TextView
+                    android:id="@+id/listitem_cart_num"
+                    android:layout_width="65px"
+                    android:layout_height="41px"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginRight="-1dp"
+                    android:background="@drawable/shape_num"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#666666"
+                    android:textSize="24px" />
+
+                <ImageButton
+                    android:id="@+id/listitem_cart_plus"
+                    android:layout_width="43px"
+                    android:layout_height="41px"
+                    android:layout_marginLeft="-1px"
+                    android:background="@drawable/shape_plus"
+                    app:srcCompat="@drawable/ic_plus" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/listitem_cart_occupy"
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,146 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.toocms.template">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.toocms.frame.config.WeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.CustomActionBar.Template">
+
+        <!-- 百度地图APIKEY，按需 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="${baidu_apikey}" />
+
+        <!-- 设计图尺寸，必要、固定 -->
+        <meta-data
+            android:name="design_width"
+            android:value="750" />
+        <meta-data
+            android:name="design_height"
+            android:value="1334" />
+
+        <!-- 图片加载参数，必要、固定 -->
+        <meta-data
+            android:name="com.toocms.frame.image.TooCMSCache"
+            android:value="GlideModule"></meta-data>
+
+        <!--Loading页-->
+        <activity
+            android:name=".ui.loading.SplashAty"
+            android:theme="@style/AppTheme.CustomActionBar.Template.Loading">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--广告页-->
+        <activity android:name=".ui.loading.advert.AdvertAty" />
+        <!--引导页-->
+        <activity android:name=".ui.loading.GuideAty" />
+        <!--弹出广告页-->
+        <activity
+            android:name=".ui.loading.PopAdvertAty"
+            android:theme="@style/AppTheme.Translucent" />
+        <!--主页-->
+        <activity android:name=".ui.MainAty" />
+        <!--设置-->
+        <activity android:name=".ui.mine.settings.SettingsAty" />
+        <!--意见反馈-->
+        <activity android:name=".ui.mine.settings.FeedbackAty" />
+        <!--关于我们-->
+        <activity android:name=".ui.mine.settings.AboutAty" />
+
+        <!-- ============================ 账号相关 ============================= -->
+        <!--登录-->
+        <activity
+            android:name=".ui.lar.login.LoginAty"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!--注册-验证手机号-->
+        <activity android:name=".ui.lar.registerphone.RegisterPhoneAty" />
+        <!--注册-设置密码-->
+        <activity
+            android:name=".ui.lar.registerpsd.RegisterPsdAty"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!--修改登录密码-->
+        <activity
+            android:name=".ui.lar.RevisePsdAty"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!--个人信息-->
+        <activity android:name=".ui.mine.user.UserInfoAty" />
+        <!--修改昵称-->
+        <activity android:name=".ui.mine.user.ReviseNameAty" />
+        <!--验证手机号-->
+        <activity android:name=".ui.mine.phone.ValidatePhoneAty" />
+        <!--绑定新手机号-->
+        <activity android:name=".ui.mine.phone.ChangePhoneAty" />
+
+        <!--地址相关-->
+        <activity android:name=".ui.address.addresses.AddressesAty" />
+        <activity android:name=".ui.address.addressdetail.AddressDetailAty" />
+        <activity android:name=".ui.address.selectcity.SelectCityAty" />
+        <activity android:name=".ui.address.selectregion.SelectRegionAty" />
+
+        <!--订单相关-->
+        <activity android:name=".ui.order.confirmorder.ConfirmOrderAty" />
+
+        <!--优惠券相关-->
+        <activity android:name=".ui.coupon.coupons.CouponsAty" />
+
+        <!--支付相关-->
+        <activity android:name=".ui.pay.pay.PayAty" />
+
+        <!-- 裁剪图片页面，按需、固定 -->
+        <activity
+            android:name="cn.zero.android.common.view.ucrop.UCropActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.toocms.frame.ui.imageselector.SelectImageAty" />
+
+        <!-- 错误信息回传service，必要、固定 -->
+        <service android:name="com.toocms.frame.crash.AbsSendCrashService" />
+
+        <!-- 百度定位，按需、固定 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
+        <!--<service android:name=".keep.ForegroundService" />-->
+        <!--<service android:name=".keep.ForegroundService$KeepInnerService" />-->
+
+        <!--SDK使用7.0或以上时需要配置此项才能实现版本更新功能-->
+        <!--注：1、将此处包名修改成项目包名   2、将res\xml\file_paths文件中的包名修改成项目包名-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.toocms.template.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">晟轩科技生鲜原型库</string>
+    <string name="foreground_service_started">Service is in the foreground</string>
+</resources>

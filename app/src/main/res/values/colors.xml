@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--APP主色调-->
+    <color name="clr_main">#FF5500</color>
+    <!--页面背景色-->
+    <color name="clr_bg">#F2F2F2</color>
+    <!--Toolbar颜色-->
+    <color name="action_bg">@color/white</color>
+    <color name="action_title_color">#323232</color>
+    <color name="action_menu_color">#323232</color>
+    <!--其他颜色-->
+    <!--默认文字颜色-->
+    <color name="clr_default_text">#323232</color>
+    <color name="clr_default_sub_text">#656565</color>
+</resources>

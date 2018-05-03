@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160px"
+        android:src="@drawable/ic_login_logo" />
+
+    <TextView
+        android:id="@+id/about_content"
+        style="@style/style_default_text"
+        android:layout_marginTop="100px"
+        android:lineSpacingExtra="5dp"
+        android:padding="50px"
+        android:text="我们水果对四十是一家专注于我们水果对四十是一家专注于我们水果对四十是一家专注于我们水果对四十是一家专注于我们水果对四十是一家专注于我们水果对四十是一家专注于我们水果对四十是一家专注于"
+        android:textColor="#666666" />
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <cn.zero.android.common.view.swipetoloadlayout.view.SwipeToLoadRecyclerView
+        android:id="@+id/order_coupon_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:swipe_mode="pullDownFromTop"></cn.zero.android.common.view.swipetoloadlayout.view.SwipeToLoadRecyclerView>
+
+    <cn.zero.android.common.view.textview.DrawableTopCenterTextView
+        android:id="@+id/order_coupon_empty"
+        style="@style/style_default_empty"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_login_logo"
+        android:text="暂无相关数据" />
+
+    <LinearLayout
+        android:id="@+id/order_coupon_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/order_coupon_unused"
+            style="@style/style_cbox"
+            android:layout_height="115px"
+            android:layout_marginLeft="35px"
+            android:drawableLeft="@drawable/flag_cbox"
+            android:text="不使用优惠券"
+            android:textColor="#4C4C4C"
+            android:textSize="30px" />
+
+        <View style="@style/weight" />
+
+        <cn.zero.android.common.view.FButton
+            android:id="@+id/order_coupon_sure"
+            style="@style/style_default_fbtn"
+            android:layout_width="260px"
+            android:layout_height="match_parent"
+            android:text="确定"
+            app:cornerRadius="0px" />
+    </LinearLayout>
+</LinearLayout>

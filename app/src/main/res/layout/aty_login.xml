@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.zero.android.common.view.KeyboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_keyboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160px"
+        android:src="@drawable/ic_login_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160px"
+        android:orientation="vertical"
+        android:paddingLeft="65px"
+        android:paddingRight="65px">
+
+        <EditText
+            android:id="@+id/login_account"
+            style="@style/style_default_text"
+            android:background="@color/transparent"
+            android:drawableLeft="@drawable/flag_login_account"
+            android:drawablePadding="25px"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:padding="15px"
+            android:singleLine="true" />
+
+        <View
+            style="@style/divider"
+            android:background="#D3D3D3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/login_psd"
+                style="@style/style_default_text"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/flag_login_psd"
+                android:drawablePadding="25px"
+                android:hint="请输入密码"
+                android:padding="15px"
+                android:password="true"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/login_forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15px"
+                android:text="忘记密码?"
+                android:textColor="#fb7204"
+                android:textSize="26px" />
+        </LinearLayout>
+
+        <View
+            style="@style/divider"
+            android:background="#D3D3D3" />
+
+        <cn.zero.android.common.view.FButton
+            android:id="@+id/login"
+            style="@style/style_default_fbtn"
+            android:layout_marginTop="80px"
+            android:text="立即登录" />
+    </LinearLayout>
+</cn.zero.android.common.view.KeyboardLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/index_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/action_bg"
+        android:paddingLeft="30px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_index_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="首页"
+            android:textColor="@color/action_title_color"
+            android:textSize="@dimen/action_title_size" />
+    </RelativeLayout>
+
+    <cn.zero.android.common.view.swipetoloadlayout.view.SwipeToLoadRecyclerView
+        android:id="@+id/index_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:swipe_mode="pullDownFromTop"></cn.zero.android.common.view.swipetoloadlayout.view.SwipeToLoadRecyclerView>
+</LinearLayout>

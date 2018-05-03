@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120px"
+        android:layout_marginTop="30px"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/settings_feedback"
+            style="@style/style_settings_item"
+            android:drawableRight="@drawable/flag_arrow_right"
+            android:text="意见反馈" />
+
+        <View
+            style="@style/divider"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px" />
+
+        <TextView
+            android:id="@+id/settings_about"
+            style="@style/style_settings_item"
+            android:drawableRight="@drawable/flag_arrow_right"
+            android:text="关于我们" />
+
+        <View
+            style="@style/divider"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px" />
+
+        <TextView
+            android:id="@+id/settings_clear"
+            style="@style/style_settings_item"
+            android:drawableRight="@drawable/flag_arrow_right"
+            android:text="清除缓存" />
+
+        <View
+            style="@style/divider"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px" />
+
+        <LinearLayout
+            android:id="@+id/settings_service"
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@drawable/normal_white_pressed_gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="30px"
+            android:paddingRight="30px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_weight="1"
+                android:text="客服电话"
+                android:textSize="30px" />
+
+            <TextView
+                android:id="@+id/settings_phone"
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:drawablePadding="20px"
+                android:drawableRight="@drawable/flag_arrow_right"
+                android:text="4000-111-6688"
+                android:textColor="@color/clr_main" />
+        </LinearLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px" />
+
+        <LinearLayout
+            android:id="@+id/settings_update"
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@drawable/normal_white_pressed_gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="30px"
+            android:paddingRight="30px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_weight="1"
+                android:text="版本信息"
+                android:textSize="30px" />
+
+            <TextView
+                android:id="@+id/settings_version"
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:text="3.7.1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <cn.zero.android.common.view.FButton
+        android:id="@+id/settings_exit"
+        style="@style/style_default_fbtn"
+        android:layout_margin="25px"
+        android:text="退出登录" />
+</LinearLayout>

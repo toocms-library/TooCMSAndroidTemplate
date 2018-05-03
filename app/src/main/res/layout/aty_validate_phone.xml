@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30px"
+        android:background="@drawable/bg_edittext_white"
+        android:orientation="horizontal"
+        android:padding="30px">
+
+        <TextView
+            style="@style/style_default_text"
+            android:layout_width="wrap_content"
+            android:text="原手机号" />
+
+        <EditText
+            android:id="@+id/validate_phone"
+            style="@style/style_default_text"
+            android:layout_marginLeft="30px"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="11" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15px"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edittext_white"
+            android:orientation="horizontal"
+            android:padding="30px">
+
+            <TextView
+                style="@style/style_default_text"
+                android:layout_width="wrap_content"
+                android:text="验证码" />
+
+            <EditText
+                android:id="@+id/validate_phone_code"
+                style="@style/style_default_text"
+                android:layout_marginLeft="30px"
+                android:hint="请输入验证码"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/validate_phone_getcode"
+            style="@style/style_default_text"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_edittext_white"
+            android:padding="30px"
+            android:text="获取验证码"
+            android:textColor="@color/clr_main" />
+    </LinearLayout>
+
+    <cn.zero.android.common.view.FButton
+        android:id="@+id/validate_phone_next"
+        style="@style/style_default_fbtn"
+        android:layout_margin="25px"
+        android:text="下一步" />
+</LinearLayout>

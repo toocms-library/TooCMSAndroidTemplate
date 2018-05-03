@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Toolbar尺寸-->
+    <dimen name="action_height_size">48dp</dimen>
+    <dimen name="action_menu_size">16sp</dimen>
+    <dimen name="action_title_size">18sp</dimen>
+    <!--默认文字字号-->
+    <dimen name="dim_default_text">28px</dimen>
+    <dimen name="dim_default_sub_text">26px</dimen>
+    <!--默认drawablepadding-->
+    <dimen name="dim_default_drawablepadding">15px</dimen>
+</resources>

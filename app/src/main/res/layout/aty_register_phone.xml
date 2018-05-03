@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clr_bg"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/register_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="160px"
+            android:src="@drawable/ic_login_logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160px"
+            android:orientation="vertical"
+            android:paddingLeft="65px"
+            android:paddingRight="65px">
+
+            <EditText
+                android:id="@+id/register_phone"
+                style="@style/style_default_text"
+                android:background="@color/transparent"
+                android:drawableLeft="@drawable/flag_register_phone"
+                android:drawablePadding="25px"
+                android:hint="请输入手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:padding="15px"
+                android:singleLine="true" />
+
+            <View
+                style="@style/divider"
+                android:background="#D3D3D3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45px"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/register_code"
+                    style="@style/style_default_text"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:drawableLeft="@drawable/flag_register_code"
+                    android:drawablePadding="25px"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:padding="15px"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="50px"
+                    android:background="#D3D3D3" />
+
+                <TextView
+                    android:id="@+id/register_get_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15px"
+                    android:text="获取验证码"
+                    android:textColor="@color/clr_main"
+                    android:textSize="26px" />
+            </LinearLayout>
+
+            <View
+                style="@style/divider"
+                android:background="#D3D3D3" />
+
+            <cn.zero.android.common.view.FButton
+                android:id="@+id/register_next"
+                style="@style/style_default_fbtn"
+                android:layout_marginBottom="80px"
+                android:layout_marginTop="80px"
+                android:text="下一步" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
