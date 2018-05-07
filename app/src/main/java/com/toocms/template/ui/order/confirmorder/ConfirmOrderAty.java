@@ -326,7 +326,7 @@ public class ConfirmOrderAty extends BaseAty<ConfirmOrderView, ConfirmOrderPrese
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            ImageLoader.loadUrl2Image(ConfirmOrderAty.this, good.getCover(), viewHolder.imgvImage, R.drawable.ic_default_172_172);
+            ImageLoader.loadUrl2Image(glide, good.getCover(), viewHolder.imgvImage, R.drawable.ic_default_172_172);
             viewHolder.tvName.setText(good.getName());
             viewHolder.tvPrice.setText("￥" + good.getPrice());
             viewHolder.tvSpec.setText("规格：" + good.getSpecify_name());

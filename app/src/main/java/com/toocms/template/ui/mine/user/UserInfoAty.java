@@ -55,7 +55,7 @@ public class UserInfoAty extends BaseAty {
         super.onResume();
         // ================= 设置头像和昵称，真实项目中换成调用接口获取 ====================
         String head = user.getCover();
-        ImageLoader.loadUrl2CircleImage(this, head, imageView, R.drawable.ic_default_head);
+        ImageLoader.loadUrl2CircleImage(glide, head, imageView, R.drawable.ic_default_head);
         tvName.setText(user.getNickname());
         tvPhone.setText(user.getAccount());
     }

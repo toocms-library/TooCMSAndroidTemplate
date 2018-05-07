@@ -74,7 +74,7 @@ public class AdvertAty extends BaseAty<AdvertView, AdvertPresenterImpl> implemen
 
     @Override
     public void showAdvertAndCountdown(Advert advert) {
-        ImageLoader.loadUrl2Image(this, advert.getUrl(), imageView, R.drawable.layer_loading);
+        ImageLoader.loadUrl2Image(glide, advert.getUrl(), imageView, R.drawable.layer_loading);
         // 开始倒计时
         timer.start();
     }

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.toocms.frame.image.ImageLoader;
 import com.toocms.template.R;
 import com.zhy.autolayout.utils.AutoUtils;
@@ -28,9 +30,11 @@ import cn.zero.android.common.util.ListUtils;
  */
 public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.ViewHolder> {
 
+    private RequestManager glide;
     private List<Map<String, String>> list;
 
-    public CommodityAdapter(List<Map<String, String>> list) {
+    public CommodityAdapter(RequestManager glide, List<Map<String, String>> list) {
+        this.glide = glide;
         this.list = list;
     }
 
@@ -44,7 +48,7 @@ public class CommodityAdapter extends RecyclerView.Adapter<CommodityAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         // ================ 把map的key值改成接口对应的key值即可 ================
         Map<String, String> map = list.get(position);
-        ImageLoader.loadUrl2Image(x.app(), map.get(IndexFgt.ABS_URL), holder.imgvImage, R.drawable.ic_default_172_172);
+        ImageLoader.loadUrl2Image(glide, map.get(IndexFgt.ABS_URL), holder.imgvImage, R.drawable.ic_default_172_172);
         holder.tvName.setText(map.get(IndexFgt.GOODS_NAME));
         holder.tvDesc.setText(map.get(IndexFgt.GOODS_BRIEF));
         holder.tvPrice.setText(map.get(IndexFgt.GOODS_PRICE));

@@ -4,8 +4,8 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.toocms.template"
         minSdkVersion 14
@@ -45,10 +45,12 @@ dependencies {
     //  三方分享/登录
     //    compile(name: 'TooCMSAndroidShare', ext: 'aar')
     // 兼容
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support:design:25.3.0'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:design:27.1.1'
     // Glide 图片加载
-    compile 'com.github.bumptech.glide:glide:+'
+    compile 'com.github.bumptech.glide:glide:4.6.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    compile "com.github.bumptech.glide:okhttp3-integration:4.6.1"
     //  网络请求
     compile 'com.lzy.net:okgo:3.0.1'
     //    compile 'com.lzy.net:okserver:+'

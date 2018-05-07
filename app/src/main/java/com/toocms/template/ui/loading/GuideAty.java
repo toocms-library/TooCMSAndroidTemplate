@@ -1,10 +1,9 @@
 package com.toocms.template.ui.loading;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -27,6 +26,7 @@ import cn.zero.android.common.util.PreferencesUtils;
 import cn.zero.android.common.view.banner.ConvenientBanner;
 import cn.zero.android.common.view.banner.holder.CBViewHolderCreator;
 import cn.zero.android.common.view.banner.holder.Holder;
+import cn.zero.android.common.view.banner.listener.OnPageChangeListener;
 
 /**
  * 引导页
@@ -62,12 +62,23 @@ public class GuideAty extends BaseAty {
         // 如果需要自己做的话就按照之前的方法添加就可以了 ================
         convenientBanner.setPages(new CBViewHolderCreator() {
             @Override
-            public LocalImageHolderView createHolder() {
-                return new LocalImageHolderView();
+            public Holder createHolder(View view) {
+                return new LocalImageHolderView(view);
             }
-        }, list).setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public int getLayoutId() {
+                return R.layout.item_banner;
+            }
+        }, list).setOnPageChangeListener(new OnPageChangeListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int i) {
+
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int i, int i1) {
+
             }
 
             @Override
@@ -83,10 +94,6 @@ public class GuideAty extends BaseAty {
                 } else {
                     textView.setVisibility(View.GONE);
                 }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
             }
         }).setCanLoop(false);
     }
@@ -119,19 +126,21 @@ public class GuideAty extends BaseAty {
         finish();
     }
 
-    private class LocalImageHolderView implements Holder<String> {
+    private class LocalImageHolderView extends Holder<String> {
 
         private ImageView imageView;
 
-        @Override
-        public View createView(Context context) {
-            imageView = new ImageView(context);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            return imageView;
+        public LocalImageHolderView(View itemView) {
+            super(itemView);
         }
 
         @Override
-        public void UpdateUI(Context context, int i, String s) {
+        protected void initView(View view) {
+            imageView = (ImageView) view.findViewById(R.id.item_banner_imageview);
+        }
+
+        @Override
+        public void updateUI(String s) {
             imageView.setImageResource(Toolkit.getBitmapRes(GuideAty.this, s));
         }
     }

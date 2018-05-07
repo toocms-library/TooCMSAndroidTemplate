@@ -1,6 +1,5 @@
 package com.toocms.template.ui.index;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,8 +11,6 @@ import com.toocms.frame.ui.BaseFragment;
 import com.toocms.frame.ui.BasePresenter;
 import com.toocms.template.R;
 import com.zhy.autolayout.utils.AutoUtils;
-
-import org.xutils.common.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -123,12 +120,17 @@ public class IndexFgt extends BaseFragment implements OnRefreshListener {
     private void initBanner(final List<Map<String, String>> list) {
         if (headerBanner == null) {
             headerBanner = View.inflate(getActivity(), R.layout.header_index_banner, null);
-            banner = (ConvenientBanner) headerBanner.findViewById(R.id.banner);
+            banner = headerBanner.findViewById(R.id.banner);
         }
         banner.setPages(new CBViewHolderCreator() {
             @Override
-            public LocalImageHolderView createHolder() {
-                return new LocalImageHolderView();
+            public Holder createHolder(View view) {
+                return new LocalImageHolderView(view);
+            }
+
+            @Override
+            public int getLayoutId() {
+                return R.layout.item_banner;
             }
         }, list).setPageIndicator(new int[]{R.drawable.dot_normal, R.drawable.dot_focused}).setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL).setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -149,26 +151,27 @@ public class IndexFgt extends BaseFragment implements OnRefreshListener {
     private void updateUI() {
         if (!ListUtils.isEmpty(listBanner))
             initBanner(listBanner);
-        swipeToLoadRecyclerView.setAdapter(new CommodityAdapter(listCommodity));
+        swipeToLoadRecyclerView.setAdapter(new CommodityAdapter(glide, listCommodity));
         swipeToLoadRecyclerView.stopRefreshing();
     }
 
     // 轮播图
-    private class LocalImageHolderView implements Holder<Map<String, String>> {
+    private class LocalImageHolderView extends Holder<Map<String, String>> {
 
         private ImageView imageView;
 
-        @Override
-        public View createView(Context context) {
-            imageView = new ImageView(context);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            return imageView;
+        public LocalImageHolderView(View itemView) {
+            super(itemView);
         }
 
         @Override
-        public void UpdateUI(Context context, int i, Map<String, String> map) {
-            // ======================== 需把map的key值改成对应接口的key值 ========================
-            ImageLoader.loadUrl2Image(getActivity(), map.get("abs_url"), imageView, R.drawable.ic_default_750_374);
+        protected void initView(View view) {
+            imageView = view.findViewById(R.id.item_banner_imageview);
+        }
+
+        @Override
+        public void updateUI(Map<String, String> map) {
+            ImageLoader.loadUrl2Image(glide, map.get("abs_url"), imageView, R.drawable.ic_default_750_374);
         }
     }
 }

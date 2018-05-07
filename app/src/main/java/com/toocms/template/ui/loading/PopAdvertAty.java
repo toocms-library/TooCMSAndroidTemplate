@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.lzy.okgo.model.HttpParams;
 import com.toocms.frame.image.ImageLoader;
 import com.toocms.frame.web.ApiListener;
@@ -39,7 +40,7 @@ public class PopAdvertAty extends AutoLayoutActivity implements View.OnClickList
         new ApiTool<TooCMSResponse<Advert>>().getApi("http://ttt.toocms.com/Index/ad", params, new ApiListener<TooCMSResponse<Advert>>() {
             @Override
             public void onComplete(TooCMSResponse<Advert> data, Call call, Response response) {
-                ImageLoader.loadUrl2Image(PopAdvertAty.this, data.getData().getUrl(), imageView, R.drawable.layer_loading);
+                ImageLoader.loadUrl2Image(Glide.with(PopAdvertAty.this), data.getData().getUrl(), imageView, R.drawable.layer_loading);
             }
         });
     }

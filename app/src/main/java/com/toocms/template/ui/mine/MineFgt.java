@@ -51,7 +51,7 @@ public class MineFgt extends BaseFragment {
             tvName.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.flag_arrow_right, 0);
             // 头像
             String head = user.getCover();
-            ImageLoader.loadUrl2CircleImage(getActivity(), head, imgvHead, R.drawable.ic_default_head);
+            ImageLoader.loadUrl2CircleImage(glide, head, imgvHead, R.drawable.ic_default_head);
         } else {
             tvName.setText("登录 | 注册");
             tvName.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);

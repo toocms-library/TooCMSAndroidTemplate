@@ -21,8 +21,6 @@ import com.toocms.template.modle.cart.Cart;
 import com.toocms.template.ui.order.confirmorder.ConfirmOrderAty;
 import com.zhy.autolayout.utils.AutoUtils;
 
-import org.xutils.common.util.LogUtil;
-
 import java.util.List;
 
 import butterknife.BindView;
@@ -236,7 +234,7 @@ public class CartFgt extends BaseFragment<CartView, CartPresenterImpl> implement
             // 显示相应的状态图标
             holder.imgvSelect.setImageResource(isSelected ? R.drawable.flag_radio_checked : R.drawable.flag_radio_normal);
             // 设置各控件的值
-            ImageLoader.loadUrl2Image(getActivity(), cart.getCover(), holder.imgvImage, R.drawable.ic_default_172_172);
+            ImageLoader.loadUrl2Image(glide, cart.getCover(), holder.imgvImage, R.drawable.ic_default_172_172);
             holder.tvName.setText(cart.getName());
             holder.tvSpec.setVisibility(StringUtils.isEmpty(cart.getSpecify_name()) ? View.GONE : View.VISIBLE);
             holder.tvSpec.setText("规格：" + cart.getSpecify_name());
