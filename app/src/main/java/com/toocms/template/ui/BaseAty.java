@@ -29,6 +29,11 @@ public abstract class BaseAty<V, T extends BasePresenter<V>> extends BaseActivit
         changeStatusBar();
     }
 
+    @Override
+    protected boolean isStatusBarDark() {
+        return true;
+    }
+
     // 更改状态栏颜色、文字颜色
     private void changeStatusBar() {
         if (Build.MANUFACTURER.equals("Xiaomi") || Build.MANUFACTURER.equals("Meizu") || Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)

@@ -10,8 +10,8 @@ android {
         applicationId "com.toocms.template"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 20170622
-        versionName "v2.0.2"
+        versionCode 20180507
+        versionName "v2.0.3"
     }
     buildTypes {
         release {
